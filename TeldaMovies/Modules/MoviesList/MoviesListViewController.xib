@@ -4,11 +4,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MoviesListViewController" customModule="TeldaMovies" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="gJa-2P-N1c" id="XSe-nX-3v9"/>
+                <outlet property="searchDisplayController" destination="Agw-uM-LLK" id="mLE-ex-j88"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,8 +19,39 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="gJa-2P-N1c">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Lrl-c5-gu7">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="gJa-2P-N1c" secondAttribute="bottom" id="AeW-mT-nDX"/>
+                <constraint firstItem="gJa-2P-N1c" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="DMb-Ps-YEu"/>
+                <constraint firstItem="gJa-2P-N1c" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="kXz-k8-TlI"/>
+                <constraint firstAttribute="trailing" secondItem="gJa-2P-N1c" secondAttribute="trailing" id="vyV-xc-MVy"/>
+            </constraints>
             <point key="canvasLocation" x="-46" y="-17"/>
         </view>
+        <searchDisplayController id="Agw-uM-LLK">
+            <connections>
+                <outlet property="delegate" destination="-1" id="zjU-Zk-ayb"/>
+                <outlet property="searchContentsController" destination="-1" id="wsd-mW-oCE"/>
+                <outlet property="searchResultsDataSource" destination="-1" id="Tkd-F5-k4e"/>
+                <outlet property="searchResultsDelegate" destination="-1" id="Vof-OU-Sne"/>
+            </connections>
+        </searchDisplayController>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
