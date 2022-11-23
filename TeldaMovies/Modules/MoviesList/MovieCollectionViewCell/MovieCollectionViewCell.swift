@@ -38,6 +38,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
     func configure(_ viewModel: ViewModel) {
         titleLabel.text = viewModel.title
         favoriteImageView.isHidden = !viewModel.isFavorite
+        posterImageView.setImage(viewModel.posterUrl)
     }
 }
 
@@ -53,7 +54,7 @@ private extension MovieCollectionViewCell {
         let gradient = CAGradientLayer()
         gradient.frame = bounds
         gradient.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
-        gradient.locations = [0.5, 1.0]
+        gradient.locations = [0.5, 1.1]
 
         posterImageView.layer.addSublayer(gradient)
     }
