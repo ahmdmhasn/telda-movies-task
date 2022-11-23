@@ -14,6 +14,7 @@
 		AA5E37F1292DF3600019D383 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA5E37EF292DF3600019D383 /* LaunchScreen.storyboard */; };
 		AA5E37FB292E48990019D383 /* TMDBNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E37FA292E48990019D383 /* TMDBNetworking.swift */; };
 		AA5E37FE292E4ADC0019D383 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E37FD292E4ADC0019D383 /* Constants.swift */; };
+		AA5E3800292E6B520019D383 /* TMDBError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E37FF292E6B520019D383 /* TMDBError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		AA5E37F2292DF3600019D383 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA5E37FA292E48990019D383 /* TMDBNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBNetworking.swift; sourceTree = "<group>"; };
 		AA5E37FD292E4ADC0019D383 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AA5E37FF292E6B520019D383 /* TMDBError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				AA5E37FA292E48990019D383 /* TMDBNetworking.swift */,
+				AA5E37FF292E6B520019D383 /* TMDBError.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA5E37FB292E48990019D383 /* TMDBNetworking.swift in Sources */,
+				AA5E3800292E6B520019D383 /* TMDBError.swift in Sources */,
 				AA5E37E9292DF35F0019D383 /* ViewController.swift in Sources */,
 				AA5E37E5292DF35F0019D383 /* AppDelegate.swift in Sources */,
 				AA5E37FE292E4ADC0019D383 /* Constants.swift in Sources */,
