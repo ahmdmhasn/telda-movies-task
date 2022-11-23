@@ -54,6 +54,7 @@
 		AA5E37E3292DF35F0019D383 /* TeldaMovies */ = {
 			isa = PBXGroup;
 			children = (
+				AA5E37F9292E26AF0019D383 /* Resources */,
 				AA5E37E4292DF35F0019D383 /* AppDelegate.swift */,
 				AA5E37E8292DF35F0019D383 /* ViewController.swift */,
 				AA5E37EA292DF35F0019D383 /* Main.storyboard */,
@@ -61,7 +62,7 @@
 				AA5E37EF292DF3600019D383 /* LaunchScreen.storyboard */,
 				AA5E37F2292DF3600019D383 /* Info.plist */,
 			);
-			path = TeldaMovies;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,7 +286,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = L79YXVBK78;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TeldaMovies/Info.plist;
+				INFOPLIST_FILE = TeldaMovies/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -314,7 +315,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = L79YXVBK78;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TeldaMovies/Info.plist;
+				INFOPLIST_FILE = TeldaMovies/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
