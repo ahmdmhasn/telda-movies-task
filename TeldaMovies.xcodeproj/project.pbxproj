@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		AA5E37E5292DF35F0019D383 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E37E4292DF35F0019D383 /* AppDelegate.swift */; };
-		AA5E37E9292DF35F0019D383 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E37E8292DF35F0019D383 /* ViewController.swift */; };
-		AA5E37EC292DF35F0019D383 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA5E37EA292DF35F0019D383 /* Main.storyboard */; };
 		AA5E37EE292DF3600019D383 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA5E37ED292DF3600019D383 /* Assets.xcassets */; };
 		AA5E37F1292DF3600019D383 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA5E37EF292DF3600019D383 /* LaunchScreen.storyboard */; };
 		AA5E37FB292E48990019D383 /* TMDBNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E37FA292E48990019D383 /* TMDBNetworking.swift */; };
@@ -33,8 +31,6 @@
 /* Begin PBXFileReference section */
 		AA5E37E1292DF35F0019D383 /* TeldaMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeldaMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA5E37E4292DF35F0019D383 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AA5E37E8292DF35F0019D383 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AA5E37EB292DF35F0019D383 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA5E37ED292DF3600019D383 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA5E37F0292DF3600019D383 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA5E37F2292DF3600019D383 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -92,8 +88,6 @@
 				AA5E37F9292E26AF0019D383 /* Resources */,
 				AA5E37FC292E4ACF0019D383 /* Tools */,
 				AA5E37E4292DF35F0019D383 /* AppDelegate.swift */,
-				AA5E37EA292DF35F0019D383 /* Main.storyboard */,
-				AA5E37E8292DF35F0019D383 /* ViewController.swift */,
 			);
 			path = TeldaMovies;
 			sourceTree = "<group>";
@@ -228,7 +222,6 @@
 			files = (
 				AA5E37F1292DF3600019D383 /* LaunchScreen.storyboard in Resources */,
 				AA5E37EE292DF3600019D383 /* Assets.xcassets in Resources */,
-				AA5E37EC292DF35F0019D383 /* Main.storyboard in Resources */,
 				AA5E381B292ED21D0019D383 /* MoviesListViewController.xib in Resources */,
 				AA5E3824292ED2660019D383 /* MovieDetailsViewController.xib in Resources */,
 			);
@@ -254,7 +247,6 @@
 				AA5E381A292ED21D0019D383 /* MoviesListViewModel.swift in Sources */,
 				AA5E3818292ED21D0019D383 /* MoviesListViewModelType.swift in Sources */,
 				AA5E3807292E6BF90019D383 /* TMDBRequest.swift in Sources */,
-				AA5E37E9292DF35F0019D383 /* ViewController.swift in Sources */,
 				AA5E37E5292DF35F0019D383 /* AppDelegate.swift in Sources */,
 				AA5E3819292ED21D0019D383 /* MoviesListViewController.swift in Sources */,
 			);
@@ -263,14 +255,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AA5E37EA292DF35F0019D383 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AA5E37EB292DF35F0019D383 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AA5E37EF292DF3600019D383 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -408,7 +392,6 @@
 				INFOPLIST_FILE = TeldaMovies/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -437,7 +420,6 @@
 				INFOPLIST_FILE = TeldaMovies/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
