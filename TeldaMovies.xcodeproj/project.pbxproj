@@ -13,8 +13,11 @@
 		AA5E37EE292DF3600019D383 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA5E37ED292DF3600019D383 /* Assets.xcassets */; };
 		AA5E37F1292DF3600019D383 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA5E37EF292DF3600019D383 /* LaunchScreen.storyboard */; };
 		AA5E37FB292E48990019D383 /* TMDBNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E37FA292E48990019D383 /* TMDBNetworking.swift */; };
-		AA5E37FE292E4ADC0019D383 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E37FD292E4ADC0019D383 /* Constants.swift */; };
 		AA5E3800292E6B520019D383 /* TMDBError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E37FF292E6B520019D383 /* TMDBError.swift */; };
+		AA5E3803292E6B850019D383 /* MovieEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E3802292E6B850019D383 /* MovieEntity.swift */; };
+		AA5E3805292E6BBF0019D383 /* PaginatedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E3804292E6BBF0019D383 /* PaginatedList.swift */; };
+		AA5E3807292E6BF90019D383 /* TMDBRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E3806292E6BF90019D383 /* TMDBRequest.swift */; };
+		AA5E3809292E6C110019D383 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E3808292E6C110019D383 /* Logger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +29,11 @@
 		AA5E37F0292DF3600019D383 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA5E37F2292DF3600019D383 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA5E37FA292E48990019D383 /* TMDBNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBNetworking.swift; sourceTree = "<group>"; };
-		AA5E37FD292E4ADC0019D383 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AA5E37FF292E6B520019D383 /* TMDBError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBError.swift; sourceTree = "<group>"; };
+		AA5E3802292E6B850019D383 /* MovieEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieEntity.swift; sourceTree = "<group>"; };
+		AA5E3804292E6BBF0019D383 /* PaginatedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginatedList.swift; sourceTree = "<group>"; };
+		AA5E3806292E6BF90019D383 /* TMDBRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBRequest.swift; sourceTree = "<group>"; };
+		AA5E3808292E6C110019D383 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +66,13 @@
 		AA5E37E3292DF35F0019D383 /* TeldaMovies */ = {
 			isa = PBXGroup;
 			children = (
-				AA5E37FC292E4ACF0019D383 /* System */,
+				AA5E3801292E6B7C0019D383 /* Models */,
 				AA5E37F8292E268A0019D383 /* Networking */,
 				AA5E37F9292E26AF0019D383 /* Resources */,
+				AA5E37FC292E4ACF0019D383 /* Tools */,
 				AA5E37E4292DF35F0019D383 /* AppDelegate.swift */,
-				AA5E37E8292DF35F0019D383 /* ViewController.swift */,
 				AA5E37EA292DF35F0019D383 /* Main.storyboard */,
+				AA5E37E8292DF35F0019D383 /* ViewController.swift */,
 			);
 			path = TeldaMovies;
 			sourceTree = "<group>";
@@ -73,8 +80,10 @@
 		AA5E37F8292E268A0019D383 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				AA5E37FA292E48990019D383 /* TMDBNetworking.swift */,
+				AA5E3804292E6BBF0019D383 /* PaginatedList.swift */,
 				AA5E37FF292E6B520019D383 /* TMDBError.swift */,
+				AA5E37FA292E48990019D383 /* TMDBNetworking.swift */,
+				AA5E3806292E6BF90019D383 /* TMDBRequest.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -89,12 +98,20 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		AA5E37FC292E4ACF0019D383 /* System */ = {
+		AA5E37FC292E4ACF0019D383 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				AA5E37FD292E4ADC0019D383 /* Constants.swift */,
+				AA5E3808292E6C110019D383 /* Logger.swift */,
 			);
-			path = System;
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		AA5E3801292E6B7C0019D383 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AA5E3802292E6B850019D383 /* MovieEntity.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,10 +186,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA5E37FB292E48990019D383 /* TMDBNetworking.swift in Sources */,
+				AA5E3805292E6BBF0019D383 /* PaginatedList.swift in Sources */,
 				AA5E3800292E6B520019D383 /* TMDBError.swift in Sources */,
+				AA5E3803292E6B850019D383 /* MovieEntity.swift in Sources */,
+				AA5E3809292E6C110019D383 /* Logger.swift in Sources */,
+				AA5E3807292E6BF90019D383 /* TMDBRequest.swift in Sources */,
 				AA5E37E9292DF35F0019D383 /* ViewController.swift in Sources */,
 				AA5E37E5292DF35F0019D383 /* AppDelegate.swift in Sources */,
-				AA5E37FE292E4ADC0019D383 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
