@@ -18,6 +18,8 @@
 		AA5E3805292E6BBF0019D383 /* PaginatedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E3804292E6BBF0019D383 /* PaginatedList.swift */; };
 		AA5E3807292E6BF90019D383 /* TMDBRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E3806292E6BF90019D383 /* TMDBRequest.swift */; };
 		AA5E3809292E6C110019D383 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E3808292E6C110019D383 /* Logger.swift */; };
+		AA5E380B292ED0460019D383 /* CastEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E380A292ED0460019D383 /* CastEntity.swift */; };
+		AA5E380D292ED0960019D383 /* MovieCreditsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E380C292ED0960019D383 /* MovieCreditsEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		AA5E3804292E6BBF0019D383 /* PaginatedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginatedList.swift; sourceTree = "<group>"; };
 		AA5E3806292E6BF90019D383 /* TMDBRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBRequest.swift; sourceTree = "<group>"; };
 		AA5E3808292E6C110019D383 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		AA5E380A292ED0460019D383 /* CastEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastEntity.swift; sourceTree = "<group>"; };
+		AA5E380C292ED0960019D383 /* MovieCreditsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCreditsEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +113,9 @@
 		AA5E3801292E6B7C0019D383 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AA5E380A292ED0460019D383 /* CastEntity.swift */,
 				AA5E3802292E6B850019D383 /* MovieEntity.swift */,
+				AA5E380C292ED0960019D383 /* MovieCreditsEntity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -187,6 +193,8 @@
 			files = (
 				AA5E37FB292E48990019D383 /* TMDBNetworking.swift in Sources */,
 				AA5E3805292E6BBF0019D383 /* PaginatedList.swift in Sources */,
+				AA5E380D292ED0960019D383 /* MovieCreditsEntity.swift in Sources */,
+				AA5E380B292ED0460019D383 /* CastEntity.swift in Sources */,
 				AA5E3800292E6B520019D383 /* TMDBError.swift in Sources */,
 				AA5E3803292E6B850019D383 /* MovieEntity.swift in Sources */,
 				AA5E3809292E6C110019D383 /* Logger.swift in Sources */,

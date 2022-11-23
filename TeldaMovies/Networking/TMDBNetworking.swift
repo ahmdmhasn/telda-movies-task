@@ -7,12 +7,14 @@
 
 import Foundation
 
+typealias NetworkResult<T> = Result<T, TMDBNetworking.NetworkError>
+
 // MARK: - TMDBNetworking
 //
 final class TMDBNetworking {
     private let session = URLSession.shared
     
-    private func perform<T: Decodable>(_ request: TMDBRequest, completion: @escaping (Result<T, NetworkError>) -> Void) {
+    private func perform<T: Decodable>(_ request: TMDBRequest, completion: @escaping (NetworkResult<T>) -> Void) {
         session.dataTask(with: request.asURLRequest()) { data, response, error in
             do {
                 guard let data = data else {
@@ -41,10 +43,31 @@ final class TMDBNetworking {
 //
 extension TMDBNetworking {
     
-    func popularMovies(completion: @escaping (Result<PaginatedMoviesList, NetworkError>) -> Void) {
-        let request = TMDBRequest(path: "movie/popular", method: "get")
+    func popularMovies(completion: @escaping (NetworkResult<PaginatedMoviesList>) -> Void) {
+        let request = TMDBRequest(path: "movie/popular", method: "GET")
         perform(request, completion: completion)
     }
+    
+    func searchMovies(keyword: String, completion: @escaping (NetworkResult<PaginatedMoviesList>) -> Void) {
+        let request = TMDBRequest(path: "search/movie", method: "GET", parameters: ["query": keyword])
+        perform(request, completion: completion)
+    }
+    
+    func movieDetails(id: String, completion: @escaping (NetworkResult<MovieEntity>) -> Void) {
+        let request = TMDBRequest(path: "movie/\(id)", method: "GET")
+        perform(request, completion: completion)
+    }
+    
+    func similarMovies(id: String, completion: @escaping (NetworkResult<PaginatedMoviesList>) -> Void) {
+        let request = TMDBRequest(path: "movie/\(id)/similar", method: "GET")
+        perform(request, completion: completion)
+    }
+    
+    func movieCredits(id: String, completion: @escaping (NetworkResult<MovieCreditsEntity>) -> Void) {
+        let request = TMDBRequest(path: "movie/\(id)/credits", method: "GET")
+        perform(request, completion: completion)
+    }
+
 }
 
 // MARK: - NetworkError

@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        networking.popularMovies { result in
+        networking.similarMovies(id: "15015") { result in
             print(result)
         }
     }
