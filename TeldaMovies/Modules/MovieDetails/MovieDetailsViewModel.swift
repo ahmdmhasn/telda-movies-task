@@ -9,8 +9,12 @@ import Foundation
 
 // MARK: MovieDetailsViewModel
 //
-class MovieDetailsViewModel {
-  
+final class MovieDetailsViewModel {
+    let movie: MovieEntity
+    
+    init(movie: MovieEntity) {
+        self.movie = movie
+    }
 }
 
 // MARK: MovieDetailsViewModel

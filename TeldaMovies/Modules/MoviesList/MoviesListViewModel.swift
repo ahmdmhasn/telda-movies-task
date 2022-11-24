@@ -9,10 +9,11 @@ import Foundation
 
 // MARK: MoviesListViewModel
 //
-class MoviesListViewModel {
+final class MoviesListViewModel {
     let networking = TMDBNetworking()
     let watchlistStore = MoviesWatchlistStore()
     private var onSync: () -> Void = { }
+    private var onShowMovieDetails: (MovieEntity) -> Void = { _ in }
     private var cachedPopularMoviesSections: [Section]?
     private var sections: [Section] = [] {
         didSet { onSync() }
@@ -36,20 +37,25 @@ extension MoviesListViewModel: MoviesListViewModelInput {
     }
         
     func didSelectMovie(at indexPath: IndexPath) {
-        // TODO:
+        let row = sections[indexPath.section].movies[indexPath.row]
+        onShowMovieDetails(row.movie)
     }
 }
 
 // MARK: MoviesListViewModelOutput
 //
-extension MoviesListViewModel: MoviesListViewModelOutput {
+extension MoviesListViewModel: MoviesListViewModelOutput {    
     
     func onSync(onSync: @escaping () -> Void) {
         self.onSync = onSync
     }
     
+    func onShowMovieDetails(onShow: @escaping (MovieEntity) -> Void) {
+        self.onShowMovieDetails = onShow
+    }
+    
     func movieViewModel(at indexPath: IndexPath) -> MovieCollectionViewCell.ViewModel {
-        return sections[indexPath.section].movies[indexPath.row]
+        return sections[indexPath.section].movies[indexPath.row].cellViewModel
     }
     
     func numberOfSections() -> Int {
@@ -107,8 +113,10 @@ private extension MoviesListViewModel {
         let watchlist = Set(watchlistStore.moviesWatchlist())
         return Dictionary(grouping: movies, by: { $0.releaseYear })
             .map { key, value in
-                let movies = value.map {
-                    MovieCollectionViewCell.ViewModel(movie: $0, isFavorite: watchlist.contains($0.id))
+                let movies = value.map { movie in
+                    let isFavorite = watchlist.contains(movie.id)
+                    let cellViewModel = MovieCellViewModel(movie: movie, isFavorite: isFavorite)
+                    return Row(movie: movie, cellViewModel: cellViewModel)
                 }
                 return Section(title: key ?? "N/A", movies: movies)
             }
@@ -119,9 +127,15 @@ private extension MoviesListViewModel {
 // MARK: Nested Types
 //
 extension MoviesListViewModel {
+    typealias MovieCellViewModel = MovieCollectionViewCell.ViewModel
     
     struct Section {
         let title: String
-        let movies: [MovieCollectionViewCell.ViewModel]
+        let movies: [Row]
+    }
+    
+    struct Row {
+        let movie: MovieEntity
+        let cellViewModel: MovieCellViewModel
     }
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MoviesListViewController: UIViewController {
+final class MoviesListViewController: UIViewController {
     
     // MARK: Outlets
 
@@ -49,6 +49,10 @@ class MoviesListViewController: UIViewController {
             }
         }
         
+        viewModel.onShowMovieDetails { [weak self] movie in
+            self?.showMovieDetails(movie)
+        }
+        
         viewModel.viewDidLoad()
     }
 }
@@ -68,6 +72,12 @@ extension MoviesListViewController {
 // MARK: - Private Handlers
 //
 private extension MoviesListViewController {
+    
+    func showMovieDetails(_ movie: MovieEntity) {
+        let viewModel = MovieDetailsViewModel(movie: movie)
+        let viewController = MovieDetailsViewController(viewModel: viewModel)
+        navigationController?.pushViewController(viewController, animated: true)
+    }
 }
 
 // MARK: - UISearchBarDelegate

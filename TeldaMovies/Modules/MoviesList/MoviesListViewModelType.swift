@@ -23,6 +23,7 @@ protocol MoviesListViewModelInput {
 ///
 protocol MoviesListViewModelOutput {
     func onSync(onSync: @escaping () -> Void)
+    func onShowMovieDetails(onShow: @escaping (MovieEntity) -> Void)
     func movieViewModel(at indexPath: IndexPath) -> MovieCollectionViewCell.ViewModel
     func numberOfSections() -> Int
     func numberOfMovies(in section: Int) -> Int
