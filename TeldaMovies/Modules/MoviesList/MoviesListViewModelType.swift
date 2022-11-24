@@ -14,11 +14,16 @@ typealias MoviesListViewModelType = MoviesListViewModelInput & MoviesListViewMod
 /// MoviesList ViewModel Input
 ///
 protocol MoviesListViewModelInput {
-  
+    func viewDidLoad()
+    func didUpdateSearchText(_ keyword: String)
+    func didSelectMovie(at indexPath: IndexPath)
 }
 
 /// MoviesList ViewModel Output
 ///
 protocol MoviesListViewModelOutput {
-
+    func onSync(onSync: @escaping () -> Void)
+    func movieViewModel(at indexPath: IndexPath) -> MovieCollectionViewCell.ViewModel
+    func numberOfSections() -> Int
+    func numberOfMovies(in section: Int) -> Int
 }

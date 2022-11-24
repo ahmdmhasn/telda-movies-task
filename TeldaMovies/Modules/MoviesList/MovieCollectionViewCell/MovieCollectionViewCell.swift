@@ -47,7 +47,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
 private extension MovieCollectionViewCell {
     
     func configureGradient() {
-        if let gradient = posterImageView.layer.sublayers?.last as? CAGradientLayer {
+        if let gradient = posterImageView.layer.sublayers?.first as? CAGradientLayer {
             gradient.removeFromSuperlayer()
         }
         
@@ -56,7 +56,7 @@ private extension MovieCollectionViewCell {
         gradient.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
         gradient.locations = [0.5, 1.1]
 
-        posterImageView.layer.addSublayer(gradient)
+        posterImageView.layer.insertSublayer(gradient, at: .zero)
     }
     
     func configureTitleLabel() {
@@ -73,5 +73,11 @@ extension MovieCollectionViewCell {
         let title: String
         let posterUrl: String
         let isFavorite: Bool
+        
+        init(movie: MovieEntity, isFavorite: Bool) {
+            self.title = movie.title ?? ""
+            self.posterUrl = TMDBImageBuilder(path: movie.posterPath ?? "", type: .w500).absolutePath()
+            self.isFavorite = isFavorite
+        }
     }
 }

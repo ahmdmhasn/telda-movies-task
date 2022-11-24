@@ -36,10 +36,19 @@ class MoviesListViewController: UIViewController {
         
         navigationItem.titleView = searchBar
         
+        searchBar.delegate = self
         
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: MovieCollectionViewCell.reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: MovieCollectionViewCell.reuseIdentifier)
+        
+        viewModel.onSync {
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+        
+        viewModel.viewDidLoad()
     }
 }
 
@@ -60,17 +69,30 @@ extension MoviesListViewController {
 private extension MoviesListViewController {
 }
 
+// MARK: - UISearchBarDelegate
+//
+extension MoviesListViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.didUpdateSearchText(searchText)
+    }
+}
+
 // MARK: - UICollectionViewDataSource
 //
 extension MoviesListViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return viewModel.numberOfSections()
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        return viewModel.numberOfMovies(in: section)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.reuseIdentifier, for: indexPath) as! MovieCollectionViewCell
-//        cell.backgroundColor = .blue
-        cell.configure(.init(title: "Movie", posterUrl: "", isFavorite: true))
+        let movieViewModel = viewModel.movieViewModel(at: indexPath)
+        cell.configure(movieViewModel)
         return cell
     }
 }
@@ -79,6 +101,9 @@ extension MoviesListViewController: UICollectionViewDataSource {
 //
 extension MoviesListViewController: UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.didSelectMovie(at: indexPath)
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout

@@ -30,10 +30,12 @@ final class TMDBNetworking {
                 }
                 
                 let decodedResponse = try decoder.decode(T.self, from: data)
-                completion(.success(decodedResponse))
+                DispatchQueue.main.async { completion(.success(decodedResponse)) }
+                
             } catch {
                 Logger.error(error)
-                completion(.failure(error as? NetworkError ?? .unexpectedError))
+                let error = error as? NetworkError ?? .unexpectedError
+                DispatchQueue.main.async { completion(.failure(error)) }
             }
         }.resume()
     }

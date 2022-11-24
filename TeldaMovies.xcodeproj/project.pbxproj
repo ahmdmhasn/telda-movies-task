@@ -30,6 +30,7 @@
 		AA5E3829292ED7D50019D383 /* MovieCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA5E3827292ED7D50019D383 /* MovieCollectionViewCell.xib */; };
 		AA5E382C292EE42D0019D383 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AA5E382B292EE42D0019D383 /* Kingfisher */; };
 		AA5E382F292EE5600019D383 /* UIImageView+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E382E292EE5600019D383 /* UIImageView+Kingfisher.swift */; };
+		AA5E3831292EEDFB0019D383 /* TMDBImageBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E3830292EEDFB0019D383 /* TMDBImageBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		AA5E3826292ED7D50019D383 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		AA5E3827292ED7D50019D383 /* MovieCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCollectionViewCell.xib; sourceTree = "<group>"; };
 		AA5E382E292EE5600019D383 /* UIImageView+Kingfisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Kingfisher.swift"; sourceTree = "<group>"; };
+		AA5E3830292EEDFB0019D383 /* TMDBImageBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBImageBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				AA5E3808292E6C110019D383 /* Logger.swift */,
+				AA5E3830292EEDFB0019D383 /* TMDBImageBuilder.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA5E3831292EEDFB0019D383 /* TMDBImageBuilder.swift in Sources */,
 				AA5E37FB292E48990019D383 /* TMDBNetworking.swift in Sources */,
 				AA5E3805292E6BBF0019D383 /* PaginatedList.swift in Sources */,
 				AA5E380D292ED0960019D383 /* MovieCreditsEntity.swift in Sources */,

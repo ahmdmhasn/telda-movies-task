@@ -36,3 +36,15 @@ struct MovieEntity: Decodable {
         case voteCount = "vote_count"
     }
 }
+
+/// Helpers
+///
+extension MovieEntity {
+    var releaseYear: String? {
+        guard let value =  releaseDate?.split(separator: "-").first else {
+            return nil
+        }
+        
+        return String(value)
+    }
+}
