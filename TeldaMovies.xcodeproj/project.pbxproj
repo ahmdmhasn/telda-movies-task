@@ -33,6 +33,7 @@
 		AA5E3831292EEDFB0019D383 /* TMDBImageBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E3830292EEDFB0019D383 /* TMDBImageBuilder.swift */; };
 		AA5E3834292EFA980019D383 /* MovieCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E3833292EFA980019D383 /* MovieCollectionViewHeader.swift */; };
 		AA5E3836292EFA9F0019D383 /* MovieCollectionViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA5E3835292EFA9F0019D383 /* MovieCollectionViewHeader.xib */; };
+		AADB61D7292EFE4900C28191 /* MoviesWatchlistStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB61D6292EFE4900C28191 /* MoviesWatchlistStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		AA5E3830292EEDFB0019D383 /* TMDBImageBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBImageBuilder.swift; sourceTree = "<group>"; };
 		AA5E3833292EFA980019D383 /* MovieCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewHeader.swift; sourceTree = "<group>"; };
 		AA5E3835292EFA9F0019D383 /* MovieCollectionViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCollectionViewHeader.xib; sourceTree = "<group>"; };
+		AADB61D6292EFE4900C28191 /* MoviesWatchlistStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesWatchlistStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				AA5E3808292E6C110019D383 /* Logger.swift */,
+				AADB61D6292EFE4900C28191 /* MoviesWatchlistStore.swift */,
 				AA5E3830292EEDFB0019D383 /* TMDBImageBuilder.swift */,
 			);
 			path = Tools;
@@ -302,6 +305,7 @@
 				AA5E381A292ED21D0019D383 /* MoviesListViewModel.swift in Sources */,
 				AA5E3818292ED21D0019D383 /* MoviesListViewModelType.swift in Sources */,
 				AA5E3807292E6BF90019D383 /* TMDBRequest.swift in Sources */,
+				AADB61D7292EFE4900C28191 /* MoviesWatchlistStore.swift in Sources */,
 				AA5E37E5292DF35F0019D383 /* AppDelegate.swift in Sources */,
 				AA5E3819292ED21D0019D383 /* MoviesListViewController.swift in Sources */,
 				AA5E3828292ED7D50019D383 /* MovieCollectionViewCell.swift in Sources */,
