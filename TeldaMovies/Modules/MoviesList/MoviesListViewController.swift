@@ -41,6 +41,7 @@ class MoviesListViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: MovieCollectionViewCell.reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: MovieCollectionViewCell.reuseIdentifier)
+        collectionView.register(UINib(nibName: MovieCollectionViewHeader.reuseIdentifier, bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: MovieCollectionViewHeader.reuseIdentifier)
         
         viewModel.onSync {
             DispatchQueue.main.async {
@@ -104,6 +105,12 @@ extension MoviesListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         viewModel.didSelectMovie(at: indexPath)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: MovieCollectionViewHeader.reuseIdentifier, for: indexPath) as! MovieCollectionViewHeader
+        headerView.configure(title: viewModel.title(of: indexPath.section))
+        return headerView
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
@@ -126,6 +133,10 @@ extension MoviesListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return Metrics.spacing
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.bounds.width, height: Metrics.headerHeight)
+    }
 }
 
 // MARK: - Constants
@@ -134,5 +145,6 @@ extension MoviesListViewController {
     
     enum Metrics {
         static let spacing: CGFloat = 8.0
+        static let headerHeight: CGFloat = 60.0
     }
 }

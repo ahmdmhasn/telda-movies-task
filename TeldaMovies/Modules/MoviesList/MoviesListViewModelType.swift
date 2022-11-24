@@ -26,4 +26,5 @@ protocol MoviesListViewModelOutput {
     func movieViewModel(at indexPath: IndexPath) -> MovieCollectionViewCell.ViewModel
     func numberOfSections() -> Int
     func numberOfMovies(in section: Int) -> Int
+    func title(of section: Int) -> String
 }

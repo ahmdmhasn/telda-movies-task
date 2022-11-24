@@ -58,6 +58,10 @@ extension MoviesListViewModel: MoviesListViewModelOutput {
     func numberOfMovies(in section: Int) -> Int {
         return sections[section].movies.count
     }
+    
+    func title(of section: Int) -> String {
+        return sections[section].title
+    }
 }
 
 // MARK: Networking Handlers
@@ -104,7 +108,7 @@ private extension MoviesListViewModel {
                 let movies = value.map { MovieCollectionViewCell.ViewModel(movie: $0, isFavorite: true) }
                 return Section(title: key ?? "N/A", movies: movies)
             }
-            .sorted { $0.title < $1.title }
+            .sorted { $0.title > $1.title }
     }
 }
 
