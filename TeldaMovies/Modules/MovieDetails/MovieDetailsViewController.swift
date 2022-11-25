@@ -37,6 +37,7 @@ final class MovieDetailsViewController: UIViewController {
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.allowsSelection = false
+        tableView.separatorStyle = .none
         tableView.register(MovieOverviewTableViewCell.self)
         tableView.register(MoviesTableViewCell.self)
         tableView.register(CastsTableViewCell.self)

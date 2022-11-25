@@ -44,6 +44,8 @@
 		AADB61EF293136B500C28191 /* UICollectionView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB61EE293136B500C28191 /* UICollectionView+Helpers.swift */; };
 		AADB61F229313C7400C28191 /* Collection+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB61F129313C7400C28191 /* Collection+Helpers.swift */; };
 		AADB61F429313EF400C28191 /* NSObject+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB61F329313EF400C28191 /* NSObject+Helpers.swift */; };
+		AADB61F72931438E00C28191 /* CastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB61F52931438E00C28191 /* CastCollectionViewCell.swift */; };
+		AADB61F82931438E00C28191 /* CastCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AADB61F62931438E00C28191 /* CastCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +87,8 @@
 		AADB61EE293136B500C28191 /* UICollectionView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Helpers.swift"; sourceTree = "<group>"; };
 		AADB61F129313C7400C28191 /* Collection+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Helpers.swift"; sourceTree = "<group>"; };
 		AADB61F329313EF400C28191 /* NSObject+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Helpers.swift"; sourceTree = "<group>"; };
+		AADB61F52931438E00C28191 /* CastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastCollectionViewCell.swift; sourceTree = "<group>"; };
+		AADB61F62931438E00C28191 /* CastCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +242,8 @@
 		AADB61E72931355900C28191 /* CastsTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				AADB61F52931438E00C28191 /* CastCollectionViewCell.swift */,
+				AADB61F62931438E00C28191 /* CastCollectionViewCell.xib */,
 				AADB61E32931355000C28191 /* CastsTableViewCell.swift */,
 				AADB61E42931355000C28191 /* CastsTableViewCell.xib */,
 			);
@@ -348,6 +354,7 @@
 				AA5E37F1292DF3600019D383 /* LaunchScreen.storyboard in Resources */,
 				AADB61E62931355000C28191 /* CastsTableViewCell.xib in Resources */,
 				AA5E37EE292DF3600019D383 /* Assets.xcassets in Resources */,
+				AADB61F82931438E00C28191 /* CastCollectionViewCell.xib in Resources */,
 				AA5E381B292ED21D0019D383 /* MoviesListViewController.xib in Resources */,
 				AA5E3836292EFA9F0019D383 /* MovieCollectionViewHeader.xib in Resources */,
 				AADB61E22931353F00C28191 /* MoviesTableViewCell.xib in Resources */,
@@ -363,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA5E3831292EEDFB0019D383 /* TMDBImageBuilder.swift in Sources */,
+				AADB61F72931438E00C28191 /* CastCollectionViewCell.swift in Sources */,
 				AADB61E52931355000C28191 /* CastsTableViewCell.swift in Sources */,
 				AA5E37FB292E48990019D383 /* TMDBNetworking.swift in Sources */,
 				AA5E3805292E6BBF0019D383 /* PaginatedList.swift in Sources */,

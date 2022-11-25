@@ -16,8 +16,8 @@ final class MovieDetailsViewModel {
 
     private(set) var movieOverview: MovieOverviewTableViewCell.ViewModel
     private(set) var similarMoviesList: [MovieCollectionViewCell.ViewModel] = []
-    private(set) var actorsList: [CastsTableViewCell.ViewModel] = []
-    private(set) var directorsList: [CastsTableViewCell.ViewModel] = []
+    private(set) var actorsList: CastsTableViewCell.ViewModel = [.init(imageUrl: "", name: "Movie 1")]
+    private(set) var directorsList: CastsTableViewCell.ViewModel = [.init(imageUrl: "", name: "Movie 1")]
     
     init(movie: MovieEntity) {
         self.movie = movie

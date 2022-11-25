@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CastCollectionViewCell" customModule="TeldaMovies" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="182" height="305"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="182" height="305"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="X1K-OX-9ET">
+                        <rect key="frame" x="0.0" y="0.0" width="182" height="305"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xnr-fB-OQA">
+                                <rect key="frame" x="0.0" y="0.0" width="182" height="182"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Xnr-fB-OQA" secondAttribute="height" multiplier="1:1" id="eNE-Te-7cy"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwr-H0-RU8">
+                                <rect key="frame" x="0.0" y="190" width="182" height="115"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="X1K-OX-9ET" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="SX8-Vm-wDA"/>
+                <constraint firstAttribute="trailing" secondItem="X1K-OX-9ET" secondAttribute="trailing" id="m9k-nE-u21"/>
+                <constraint firstAttribute="bottom" secondItem="X1K-OX-9ET" secondAttribute="bottom" id="qQu-J2-qyK"/>
+                <constraint firstItem="X1K-OX-9ET" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="uNN-ao-KeR"/>
+            </constraints>
+            <size key="customSize" width="182" height="305"/>
+            <connections>
+                <outlet property="castImageView" destination="Xnr-fB-OQA" id="n4L-u6-82W"/>
+                <outlet property="castNameLabel" destination="hwr-H0-RU8" id="hlh-tP-zme"/>
+            </connections>
+            <point key="canvasLocation" x="198" y="59"/>
+        </collectionViewCell>
+    </objects>
+</document>

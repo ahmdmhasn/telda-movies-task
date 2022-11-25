@@ -23,8 +23,8 @@ protocol MovieDetailsViewModelOutput {
     var title: String { get }
     var movieOverview: MovieOverviewTableViewCell.ViewModel { get }
     var similarMoviesList: [MovieCollectionViewCell.ViewModel] { get }
-    var actorsList: [CastsTableViewCell.ViewModel] { get }
-    var directorsList: [CastsTableViewCell.ViewModel] { get }
+    var actorsList: CastsTableViewCell.ViewModel { get }
+    var directorsList: CastsTableViewCell.ViewModel { get }
 
     func onSync(onSync: @escaping () -> Void)
     func numberOfSections() -> Int
