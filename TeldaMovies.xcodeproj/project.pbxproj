@@ -40,6 +40,8 @@
 		AADB61E22931353F00C28191 /* MoviesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AADB61E02931353F00C28191 /* MoviesTableViewCell.xib */; };
 		AADB61E52931355000C28191 /* CastsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB61E32931355000C28191 /* CastsTableViewCell.swift */; };
 		AADB61E62931355000C28191 /* CastsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AADB61E42931355000C28191 /* CastsTableViewCell.xib */; };
+		AADB61ED2931363000C28191 /* UITableView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB61EC2931363000C28191 /* UITableView+Helpers.swift */; };
+		AADB61EF293136B500C28191 /* UICollectionView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB61EE293136B500C28191 /* UICollectionView+Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +79,8 @@
 		AADB61E02931353F00C28191 /* MoviesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoviesTableViewCell.xib; sourceTree = "<group>"; };
 		AADB61E32931355000C28191 /* CastsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastsTableViewCell.swift; sourceTree = "<group>"; };
 		AADB61E42931355000C28191 /* CastsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastsTableViewCell.xib; sourceTree = "<group>"; };
+		AADB61EC2931363000C28191 /* UITableView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Helpers.swift"; sourceTree = "<group>"; };
+		AADB61EE293136B500C28191 /* UICollectionView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Helpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,7 +212,9 @@
 		AA5E382D292EE5510019D383 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				AADB61EE293136B500C28191 /* UICollectionView+Helpers.swift */,
 				AA5E382E292EE5600019D383 /* UIImageView+Kingfisher.swift */,
+				AADB61EC2931363000C28191 /* UITableView+Helpers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -361,8 +367,10 @@
 				AA5E381A292ED21D0019D383 /* MoviesListViewModel.swift in Sources */,
 				AA5E3818292ED21D0019D383 /* MoviesListViewModelType.swift in Sources */,
 				AA5E3807292E6BF90019D383 /* TMDBRequest.swift in Sources */,
+				AADB61ED2931363000C28191 /* UITableView+Helpers.swift in Sources */,
 				AADB61D7292EFE4900C28191 /* MoviesWatchlistStore.swift in Sources */,
 				AA5E37E5292DF35F0019D383 /* AppDelegate.swift in Sources */,
+				AADB61EF293136B500C28191 /* UICollectionView+Helpers.swift in Sources */,
 				AA5E3819292ED21D0019D383 /* MoviesListViewController.swift in Sources */,
 				AA5E3828292ED7D50019D383 /* MovieCollectionViewCell.swift in Sources */,
 			);

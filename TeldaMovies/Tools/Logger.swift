@@ -15,4 +15,9 @@ struct Logger {
     static func error(_ message: Any) {
         print("❌", message)
     }
+    
+    static func fatal(_ message: Any) -> Never {
+        print("❌", message)
+        fatalError("\(message)")
+    }
 }
