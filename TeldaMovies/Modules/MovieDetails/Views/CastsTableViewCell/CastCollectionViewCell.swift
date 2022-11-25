@@ -43,5 +43,15 @@ extension CastCollectionViewCell {
     struct ViewModel {
         let imageUrl: String
         let name: String
+        
+        init(imageUrl: String, name: String) {
+            self.imageUrl = imageUrl
+            self.name = name
+        }
+        
+        init(entity: CastEntity) {
+            self.name = entity.name ?? String()
+            self.imageUrl = TMDBImageBuilder(path: entity.profilePath ?? "", type: .w500).absolutePath()
+        }
     }
 }

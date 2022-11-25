@@ -18,8 +18,8 @@ final class MovieDetailsViewModel {
 
     private(set) var movieOverview: MovieOverviewTableViewCell.ViewModel
     private(set) var similarMoviesList: MoviesTableViewCell.ViewModel = []
-    private(set) var actorsList: CastsTableViewCell.ViewModel = [.init(imageUrl: "", name: "Movie 1")]
-    private(set) var directorsList: CastsTableViewCell.ViewModel = [.init(imageUrl: "", name: "Movie 1")]
+    private(set) var actorsList: CastsTableViewCell.ViewModel = []
+    private(set) var directorsList: CastsTableViewCell.ViewModel = []
     
     init(movie: MovieEntity) {
         self.movie = movie
@@ -94,8 +94,66 @@ private extension MovieDetailsViewModel {
                 return
             }
             
-            self.similarMoviesList = self.converter.movieCellViewModels(of: value.results)
+            let movies = Array(value.results.prefix(5))
+            self.loadSimilarMoviesCast(movies)
+            self.similarMoviesList = self.converter.movieCellViewModels(of: movies)
             self.reloadSectionsAndSync()
+        }
+    }
+}
+
+// MARK: Similar Movies Cast Handlers
+//
+private extension MovieDetailsViewModel {
+    
+    func loadSimilarMoviesCast(_ movies: [MovieEntity]) {
+        DispatchQueue.global().async {
+            self.loadActorsAndDirectors(in: movies) { actors, directors in
+                self.actorsList = actors.map(CastCollectionViewCell.ViewModel.init)
+                self.directorsList = directors.map(CastCollectionViewCell.ViewModel.init)
+                DispatchQueue.main.async {
+                    self.reloadSectionsAndSync()
+                }
+            }
+        }
+    }
+    
+    func loadActorsAndDirectors(in movies: [MovieEntity], completion: @escaping ([CastEntity], [CastEntity]) -> Void) {
+        var actors: Set<CastEntity> = []
+        var directors: Set<CastEntity> = []
+        let dispatchGroup = DispatchGroup()
+        
+        movies.forEach { movie in
+            dispatchGroup.enter()
+            loadMovieCast(movie) { credits in
+                defer { dispatchGroup.leave() }
+                
+                let cast = credits?.cast ?? []
+                for item in cast where item.knownForDepartment == .acting {
+                    actors.insert(item)
+                }
+                
+                for item in cast where item.knownForDepartment == .directing {
+                    directors.insert(item)
+                }
+            }
+        }
+        
+        dispatchGroup.notify(queue: .global()) {
+            let sortedActors = actors
+                .sorted(by: { $0.popularity ?? .zero > $1.popularity ?? .zero })
+                .prefix(5)
+            let sortedDirectors = directors
+                .sorted(by: { $0.popularity ?? .zero > $1.popularity ?? .zero })
+                .prefix(5)
+            completion(Array(sortedActors), Array(sortedDirectors))
+        }
+    }
+    
+    func loadMovieCast(_ movie: MovieEntity, completion: @escaping (MovieCreditsEntity?) -> Void) {
+        networking.movieCredits(id: String(movie.id)) { result in
+            let credits = try? result.get()
+            completion(credits)
         }
     }
 }
