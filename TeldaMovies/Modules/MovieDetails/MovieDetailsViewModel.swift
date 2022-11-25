@@ -10,6 +10,7 @@ import Foundation
 // MARK: MovieDetailsViewModel
 //
 final class MovieDetailsViewModel {
+    let networking = TMDBNetworking()
     let movie: MovieEntity
     private var sections: [Section] = []
     private var onSync: () -> Void = { }
@@ -31,6 +32,8 @@ final class MovieDetailsViewModel {
 extension MovieDetailsViewModel: MovieDetailsViewModelInput {
     func viewDidLoad() {
         reloadSectionsAndSync()
+        loadMovieOverview()
+        loadSimilarMovies()
     }
 }
 
@@ -70,6 +73,29 @@ private extension MovieDetailsViewModel {
     func reloadSectionsAndSync() {
         reloadSections()
         onSync()
+    }
+    
+    func loadMovieOverview() {
+        networking.movieDetails(id: String(movie.id)) { [weak self] result in
+            guard let self = self, case .success(let movie) = result else {
+                return
+            }
+            
+            let movieOverview = MovieOverviewTableViewCell.ViewModel(movie: movie)
+            self.movieOverview = movieOverview
+            self.reloadSectionsAndSync()
+        }
+    }
+    
+    func loadSimilarMovies() {
+        networking.similarMovies(id: String(movie.id)) { [weak self] result in
+            guard let self = self, case .success(let value) = result else {
+                return
+            }
+            
+            self.similarMoviesList = value.results.map { MoviesTableViewCell.Element(movie: $0, isFavorite: false) }
+            self.reloadSectionsAndSync()
+        }
     }
 }
 

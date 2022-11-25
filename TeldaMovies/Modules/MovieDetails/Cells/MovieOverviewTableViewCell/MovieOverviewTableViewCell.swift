@@ -31,9 +31,19 @@ class MovieOverviewTableViewCell: UITableViewCell {
 extension MovieOverviewTableViewCell {
     struct ViewModel {
         let title: String
+        let overview: String
+        let tagline: String
+        let revenue: String
+        let releaseDate: String
+        let statues: String
         
         init(movie: MovieEntity) {
-            self.title = movie.title ?? ""
+            self.title = movie.title ?? String()
+            self.overview = movie.overview ?? String()
+            self.tagline = movie.tagline ?? String()
+            self.revenue = movie.revenue.map { String($0) } ?? String()
+            self.releaseDate = movie.releaseDate ?? String()
+            self.statues = movie.status ?? String()
         }
     }
 }

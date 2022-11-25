@@ -13,10 +13,14 @@ struct MovieEntity: Decodable {
     let id: Int
     let adult: Bool?
     let backdropPath: String?
-    let genreIDS: [Int]?
-    let originalLanguage, originalTitle, overview: String?
+    let budget: Int?
+    let homepage: String?
+    let imdbID, originalLanguage, originalTitle, overview: String?
     let popularity: Double?
-    let posterPath, releaseDate, title: String?
+    let posterPath: String?
+    let releaseDate: String?
+    let revenue, runtime: Int?
+    let status, tagline, title: String?
     let video: Bool?
     let voteAverage: Double?
     let voteCount: Int?
@@ -24,14 +28,15 @@ struct MovieEntity: Decodable {
     enum CodingKeys: String, CodingKey {
         case adult
         case backdropPath = "backdrop_path"
-        case genreIDS = "genre_ids"
-        case id
+        case budget, homepage, id
+        case imdbID = "imdb_id"
         case originalLanguage = "original_language"
         case originalTitle = "original_title"
         case overview, popularity
         case posterPath = "poster_path"
         case releaseDate = "release_date"
-        case title, video
+        case revenue, runtime
+        case status, tagline, title, video
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
     }
