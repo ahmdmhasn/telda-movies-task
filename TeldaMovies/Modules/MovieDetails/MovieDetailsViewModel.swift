@@ -15,13 +15,14 @@ final class MovieDetailsViewModel {
     private var onSync: () -> Void = { }
 
     private(set) var movieOverview: MovieOverviewTableViewCell.ViewModel
-    private(set) var similarMoviesList: [MovieCollectionViewCell.ViewModel] = []
+    private(set) var similarMoviesList: MoviesTableViewCell.ViewModel = []
     private(set) var actorsList: CastsTableViewCell.ViewModel = [.init(imageUrl: "", name: "Movie 1")]
     private(set) var directorsList: CastsTableViewCell.ViewModel = [.init(imageUrl: "", name: "Movie 1")]
     
     init(movie: MovieEntity) {
         self.movie = movie
         self.movieOverview = MovieOverviewTableViewCell.ViewModel(movie: movie)
+        self.similarMoviesList = [MovieCollectionViewCell.ViewModel(movie: movie, isFavorite: false)]
     }
 }
 

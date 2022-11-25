@@ -58,7 +58,7 @@ extension CastsTableViewCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height = collectionView.bounds.height
-        return CGSize(width: height * 0.7, height: height - 2 * Metrics.padding)
+        return CGSize(width: height * Metrics.widthToHeight, height: height - 2 * Metrics.padding)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -70,7 +70,6 @@ extension CastsTableViewCell: UICollectionViewDelegateFlowLayout {
     }
 }
 
-
 // MARK: - Metrics
 //
 extension CastsTableViewCell {
@@ -78,5 +77,6 @@ extension CastsTableViewCell {
     enum Metrics {
         static let spacing: CGFloat = 8.0
         static let padding: CGFloat = 8.0
+        static let widthToHeight = 0.7
     }
 }

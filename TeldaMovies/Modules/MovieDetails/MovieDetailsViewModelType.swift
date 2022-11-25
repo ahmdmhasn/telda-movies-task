@@ -22,7 +22,7 @@ protocol MovieDetailsViewModelInput {
 protocol MovieDetailsViewModelOutput {
     var title: String { get }
     var movieOverview: MovieOverviewTableViewCell.ViewModel { get }
-    var similarMoviesList: [MovieCollectionViewCell.ViewModel] { get }
+    var similarMoviesList: MoviesTableViewCell.ViewModel { get }
     var actorsList: CastsTableViewCell.ViewModel { get }
     var directorsList: CastsTableViewCell.ViewModel { get }
 
