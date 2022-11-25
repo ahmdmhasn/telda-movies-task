@@ -30,4 +30,8 @@ final class MoviesWatchlistStore {
     func moviesWatchlist() -> [Int] {
         return watchlist ?? []
     }
+    
+    func isWatchlisted(_ movie: MovieEntity) -> Bool {
+        return moviesWatchlist().contains(where: { $0 == movie.id })
+    }
 }

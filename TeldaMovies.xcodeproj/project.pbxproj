@@ -49,6 +49,8 @@
 		AADB61FA2931513F00C28191 /* MovieViewModelConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB61F92931513F00C28191 /* MovieViewModelConverter.swift */; };
 		AADB61FE2931526100C28191 /* KeyValueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB61FC2931526100C28191 /* KeyValueTableViewCell.swift */; };
 		AADB61FF2931526100C28191 /* KeyValueTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AADB61FD2931526100C28191 /* KeyValueTableViewCell.xib */; };
+		AADB62022931645600C28191 /* Notification.Name+TeldaMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB62012931645600C28191 /* Notification.Name+TeldaMovies.swift */; };
+		AADB62042931660F00C28191 /* WatchlistNavigationBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB62032931660F00C28191 /* WatchlistNavigationBehavior.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +97,8 @@
 		AADB61F92931513F00C28191 /* MovieViewModelConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModelConverter.swift; sourceTree = "<group>"; };
 		AADB61FC2931526100C28191 /* KeyValueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueTableViewCell.swift; sourceTree = "<group>"; };
 		AADB61FD2931526100C28191 /* KeyValueTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyValueTableViewCell.xib; sourceTree = "<group>"; };
+		AADB62012931645600C28191 /* Notification.Name+TeldaMovies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification.Name+TeldaMovies.swift"; sourceTree = "<group>"; };
+		AADB62032931660F00C28191 /* WatchlistNavigationBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistNavigationBehavior.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +172,7 @@
 				AADB61D6292EFE4900C28191 /* MoviesWatchlistStore.swift */,
 				AADB61F92931513F00C28191 /* MovieViewModelConverter.swift */,
 				AA5E3830292EEDFB0019D383 /* TMDBImageBuilder.swift */,
+				AADB62032931660F00C28191 /* WatchlistNavigationBehavior.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -232,6 +237,7 @@
 				AADB61EE293136B500C28191 /* UICollectionView+Helpers.swift */,
 				AA5E382E292EE5600019D383 /* UIImageView+Kingfisher.swift */,
 				AADB61EC2931363000C28191 /* UITableView+Helpers.swift */,
+				AADB62012931645600C28191 /* Notification.Name+TeldaMovies.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -408,6 +414,7 @@
 				AA5E3822292ED2660019D383 /* MovieDetailsViewController.swift in Sources */,
 				AA5E382F292EE5600019D383 /* UIImageView+Kingfisher.swift in Sources */,
 				AA5E3834292EFA980019D383 /* MovieCollectionViewHeader.swift in Sources */,
+				AADB62042931660F00C28191 /* WatchlistNavigationBehavior.swift in Sources */,
 				AADB61DB2931351400C28191 /* MovieOverviewTableViewCell.swift in Sources */,
 				AADB61F429313EF400C28191 /* NSObject+Helpers.swift in Sources */,
 				AA5E3800292E6B520019D383 /* TMDBError.swift in Sources */,
@@ -423,6 +430,7 @@
 				AA5E37E5292DF35F0019D383 /* AppDelegate.swift in Sources */,
 				AADB61EF293136B500C28191 /* UICollectionView+Helpers.swift in Sources */,
 				AADB61FE2931526100C28191 /* KeyValueTableViewCell.swift in Sources */,
+				AADB62022931645600C28191 /* Notification.Name+TeldaMovies.swift in Sources */,
 				AA5E3819292ED21D0019D383 /* MoviesListViewController.swift in Sources */,
 				AA5E3828292ED7D50019D383 /* MovieCollectionViewCell.swift in Sources */,
 			);

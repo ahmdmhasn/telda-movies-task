@@ -12,6 +12,8 @@ import Foundation
 final class MoviesListViewModel {
     let networking = TMDBNetworking()
     let converter = MovieViewModelConverter()
+    let center = NotificationCenter.default
+    
     private var onSync: () -> Void = { }
     private var onShowMovieDetails: (MovieEntity) -> Void = { _ in }
     private var cachedPopularMoviesSections: [Section]?
@@ -26,6 +28,7 @@ extension MoviesListViewModel: MoviesListViewModelInput {
     
     func viewDidLoad() {
         loadPopularMovies()
+        observeWishlistUpdates()
     }
     
     func didUpdateSearchText(_ keyword: String) {
@@ -68,6 +71,22 @@ extension MoviesListViewModel: MoviesListViewModelOutput {
     
     func title(of section: Int) -> String {
         return sections[section].title
+    }
+}
+
+// MARK: Wishlist Sync
+//
+private extension MoviesListViewModel {
+    
+    func observeWishlistUpdates() {
+        center.addObserver(self, selector: #selector(movieWishlistWasUpdatedNotification), name: .MovieWishlistWasUpdated, object: nil)
+    }
+    
+    @objc func movieWishlistWasUpdatedNotification(_ notification: Notification) {
+        // For the sake of simplicity, I will reset and load the whole data.
+        // Best practice, we need to update the changed movie only based on the movie id.
+        cachedPopularMoviesSections = nil
+        loadPopularMovies()
     }
 }
 

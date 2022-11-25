@@ -20,6 +20,7 @@ protocol MovieDetailsViewModelInput {
 /// MovieDetails ViewModel Output
 ///
 protocol MovieDetailsViewModelOutput {
+    var movie: MovieEntity { get }
     var title: String { get }
     var movieOverview: MovieOverviewTableViewCell.ViewModel { get }
     var similarMoviesList: MoviesTableViewCell.ViewModel { get }

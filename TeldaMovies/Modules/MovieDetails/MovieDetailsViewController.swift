@@ -16,7 +16,8 @@ final class MovieDetailsViewController: UIViewController {
     // MARK: Properties
         
     private let viewModel: MovieDetailsViewModelType
-
+    private var wishlistBehavior: WatchlistNavigationBehavior?
+    
     // MARK: Init
         
     init(viewModel: MovieDetailsViewModelType) {
@@ -36,6 +37,11 @@ final class MovieDetailsViewController: UIViewController {
         configureTableView()
         configureViewModel()
         configureNavigationItem()
+        
+        wishlistBehavior = WatchlistNavigationBehavior(movie: viewModel.movie,
+                                                       navigationItem: navigationItem)
+        wishlistBehavior?.attachWishlistBarItem()
+        
 
         viewModel.viewDidLoad()
     }

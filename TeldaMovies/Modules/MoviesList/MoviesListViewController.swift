@@ -55,7 +55,6 @@ extension MoviesListViewController {
         searchBar.delegate = self
     }
     
-
     func configureCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
