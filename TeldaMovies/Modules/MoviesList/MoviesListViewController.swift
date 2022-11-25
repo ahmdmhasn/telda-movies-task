@@ -17,6 +17,7 @@ final class MoviesListViewController: UIViewController {
     // MARK: Properties
         
     private let viewModel: MoviesListViewModelType
+    private lazy var keyboardObserver = KeyboardObserver(view: view, scrollView: collectionView)
 
     // MARK: Init
         
@@ -38,6 +39,7 @@ final class MoviesListViewController: UIViewController {
         configureSearchBar()
         configureCollectionView()
         configureViewModel()
+        keyboardObserver.observeKeyboardChanged()
         
         viewModel.viewDidLoad()
     }
@@ -53,6 +55,7 @@ extension MoviesListViewController {
     
     func configureSearchBar() {
         searchBar.delegate = self
+        searchBar.placeholder = "Search Movie..."
     }
     
     func configureCollectionView() {
@@ -92,6 +95,10 @@ extension MoviesListViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.didUpdateSearchText(searchText)
+    }
+        
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
     }
 }
 
