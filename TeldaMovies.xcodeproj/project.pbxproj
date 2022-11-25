@@ -42,6 +42,8 @@
 		AADB61E62931355000C28191 /* CastsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AADB61E42931355000C28191 /* CastsTableViewCell.xib */; };
 		AADB61ED2931363000C28191 /* UITableView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB61EC2931363000C28191 /* UITableView+Helpers.swift */; };
 		AADB61EF293136B500C28191 /* UICollectionView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB61EE293136B500C28191 /* UICollectionView+Helpers.swift */; };
+		AADB61F229313C7400C28191 /* Collection+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB61F129313C7400C28191 /* Collection+Helpers.swift */; };
+		AADB61F429313EF400C28191 /* NSObject+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB61F329313EF400C28191 /* NSObject+Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +83,8 @@
 		AADB61E42931355000C28191 /* CastsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastsTableViewCell.xib; sourceTree = "<group>"; };
 		AADB61EC2931363000C28191 /* UITableView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Helpers.swift"; sourceTree = "<group>"; };
 		AADB61EE293136B500C28191 /* UICollectionView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Helpers.swift"; sourceTree = "<group>"; };
+		AADB61F129313C7400C28191 /* Collection+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Helpers.swift"; sourceTree = "<group>"; };
+		AADB61F329313EF400C28191 /* NSObject+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Helpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,7 @@
 				AA5E37F8292E268A0019D383 /* Networking */,
 				AA5E37F9292E26AF0019D383 /* Resources */,
 				AA5E37FC292E4ACF0019D383 /* Tools */,
+				AADB61F02931383E00C28191 /* ViewModels */,
 				AA5E37E4292DF35F0019D383 /* AppDelegate.swift */,
 			);
 			path = TeldaMovies;
@@ -212,6 +217,8 @@
 		AA5E382D292EE5510019D383 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				AADB61F129313C7400C28191 /* Collection+Helpers.swift */,
+				AADB61F329313EF400C28191 /* NSObject+Helpers.swift */,
 				AADB61EE293136B500C28191 /* UICollectionView+Helpers.swift */,
 				AA5E382E292EE5600019D383 /* UIImageView+Kingfisher.swift */,
 				AADB61EC2931363000C28191 /* UITableView+Helpers.swift */,
@@ -263,6 +270,13 @@
 				AADB61E82931355F00C28191 /* MoviesTableViewCell */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		AADB61F02931383E00C28191 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,7 +374,9 @@
 				AA5E382F292EE5600019D383 /* UIImageView+Kingfisher.swift in Sources */,
 				AA5E3834292EFA980019D383 /* MovieCollectionViewHeader.swift in Sources */,
 				AADB61DB2931351400C28191 /* MovieOverviewTableViewCell.swift in Sources */,
+				AADB61F429313EF400C28191 /* NSObject+Helpers.swift in Sources */,
 				AA5E3800292E6B520019D383 /* TMDBError.swift in Sources */,
+				AADB61F229313C7400C28191 /* Collection+Helpers.swift in Sources */,
 				AA5E3803292E6B850019D383 /* MovieEntity.swift in Sources */,
 				AA5E3823292ED2660019D383 /* MovieDetailsViewModel.swift in Sources */,
 				AA5E3809292E6C110019D383 /* Logger.swift in Sources */,
