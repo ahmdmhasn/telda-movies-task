@@ -33,6 +33,19 @@ final class MovieDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureTableView()
+        configureViewModel()
+        configureNavigationItem()
+
+        viewModel.viewDidLoad()
+    }
+}
+
+// MARK: - Configurations
+//
+extension MovieDetailsViewController {
+    
+    func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
@@ -42,27 +55,17 @@ final class MovieDetailsViewController: UIViewController {
         tableView.register(KeyValueTableViewCell.self)
         tableView.register(MoviesTableViewCell.self)
         tableView.register(CastsTableViewCell.self)
-        
+    }
+    
+    func configureViewModel() {
         viewModel.onSync { [weak self] in
             self?.tableView.reloadData()
         }
-        
-        viewModel.viewDidLoad()
-        
+    }
+    
+    func configureNavigationItem() {
         navigationItem.title = viewModel.title
     }
-}
-
-// MARK: - Actions
-//
-extension MovieDetailsViewController {
-    
-}
-
-// MARK: - Configurations
-//
-extension MovieDetailsViewController {
-    
 }
 
 // MARK: - UITableViewDataSource

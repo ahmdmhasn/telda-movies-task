@@ -34,15 +34,36 @@ final class MoviesListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ConfigureNavigationItem()
+        configureSearchBar()
+        configureCollectionView()
+        configureViewModel()
+        
+        viewModel.viewDidLoad()
+    }
+}
+
+// MARK: - Configurations
+//
+extension MoviesListViewController {
+    
+    func ConfigureNavigationItem() {
         navigationItem.titleView = searchBar
-        
+    }
+    
+    func configureSearchBar() {
         searchBar.delegate = self
-        
+    }
+    
+
+    func configureCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: MovieCollectionViewCell.reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: MovieCollectionViewCell.reuseIdentifier)
         collectionView.register(UINib(nibName: MovieCollectionViewHeader.reuseIdentifier, bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: MovieCollectionViewHeader.reuseIdentifier)
-        
+    }
+    
+    func configureViewModel() {
         viewModel.onSync {
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
@@ -52,21 +73,7 @@ final class MoviesListViewController: UIViewController {
         viewModel.onShowMovieDetails { [weak self] movie in
             self?.showMovieDetails(movie)
         }
-        
-        viewModel.viewDidLoad()
     }
-}
-
-// MARK: - Actions
-//
-extension MoviesListViewController {
-    
-}
-
-// MARK: - Configurations
-//
-extension MoviesListViewController {
-    
 }
 
 // MARK: - Private Handlers
