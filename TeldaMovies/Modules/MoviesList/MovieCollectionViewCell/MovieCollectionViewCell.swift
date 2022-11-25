@@ -11,8 +11,6 @@ import UIKit
 //
 class MovieCollectionViewCell: UICollectionViewCell {
     
-    static let reuseIdentifier = String(describing: MovieCollectionViewCell.self)
-
     // MARK: Outlets
     
     @IBOutlet private weak var posterImageView: UIImageView!

@@ -36,6 +36,18 @@ final class MovieDetailsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.allowsSelection = false
+        tableView.register(MovieOverviewTableViewCell.self)
+        tableView.register(MoviesTableViewCell.self)
+        tableView.register(CastsTableViewCell.self)
+        
+        viewModel.onSync { [weak self] in
+            self?.tableView.reloadData()
+        }
+        
+        viewModel.viewDidLoad()
+        
+        navigationItem.title = viewModel.title
     }
 }
 
@@ -51,21 +63,23 @@ extension MovieDetailsViewController {
     
 }
 
-// MARK: - Private Handlers
-//
-private extension MovieDetailsViewController {
-}
-
 // MARK: - UITableViewDataSource
 //
 extension MovieDetailsViewController: UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.numberOfSections()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return viewModel.numberOfRows(at: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let row = viewModel.row(at: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: row.reuseIdentifier, for: indexPath)
+        configure(cell, at: indexPath)
+        return cell
     }
 }
 
@@ -73,4 +87,44 @@ extension MovieDetailsViewController: UITableViewDataSource {
 //
 extension MovieDetailsViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return viewModel.sectionTitle(at: section)
+    }
+}
+
+// MARK: - Configure Cell
+//
+private extension MovieDetailsViewController {
+    
+    func configure(_ cell: UITableViewCell, at indexPath: IndexPath) {
+        let row = viewModel.row(at: indexPath)
+        switch cell {
+        case let cell as MovieOverviewTableViewCell:
+            configureMovieOverview(cell)
+        case let cell as MoviesTableViewCell:
+            configureSimilarMovies(cell)
+        case let cell as CastsTableViewCell where row == .actors:
+            configureActors(cell)
+        case let cell as CastsTableViewCell where row == .directors:
+            configureDirectors(cell)
+        default:
+            Logger.fatal("Unexpected row type.")
+        }
+    }
+    
+    func configureMovieOverview(_ cell: MovieOverviewTableViewCell) {
+        cell.configure(viewModel.movieOverview)
+    }
+    
+    func configureSimilarMovies(_ cell: MoviesTableViewCell) {
+        cell.configure(viewModel.similarMoviesList)
+    }
+    
+    func configureActors(_ cell: CastsTableViewCell) {
+        cell.configure(viewModel.actorsList)
+    }
+    
+    func configureDirectors(_ cell: CastsTableViewCell) {
+        cell.configure(viewModel.directorsList)
+    }
 }

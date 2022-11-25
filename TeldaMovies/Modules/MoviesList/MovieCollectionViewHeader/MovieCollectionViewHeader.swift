@@ -8,7 +8,6 @@
 import UIKit
 
 final class MovieCollectionViewHeader: UICollectionReusableView {
-    static let reuseIdentifier = "\(MovieCollectionViewHeader.self)"
     
     @IBOutlet private var titleLabel: UILabel!
     

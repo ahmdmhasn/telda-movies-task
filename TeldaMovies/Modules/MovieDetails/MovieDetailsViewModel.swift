@@ -11,26 +11,123 @@ import Foundation
 //
 final class MovieDetailsViewModel {
     let movie: MovieEntity
+    private var sections: [Section] = []
+    private var onSync: () -> Void = { }
+
+    private(set) var movieOverview: MovieOverviewTableViewCell.ViewModel
+    private(set) var similarMoviesList: [MovieCollectionViewCell.ViewModel] = []
+    private(set) var actorsList: [CastsTableViewCell.ViewModel] = []
+    private(set) var directorsList: [CastsTableViewCell.ViewModel] = []
     
     init(movie: MovieEntity) {
         self.movie = movie
+        self.movieOverview = MovieOverviewTableViewCell.ViewModel(movie: movie)
     }
 }
 
-// MARK: MovieDetailsViewModel
+// MARK: MovieDetailsViewModel Input
 //
 extension MovieDetailsViewModel: MovieDetailsViewModelInput {
-
+    func viewDidLoad() {
+        reloadSectionsAndSync()
+    }
 }
 
 // MARK: MovieDetailsViewModelOutput
 //
 extension MovieDetailsViewModel: MovieDetailsViewModelOutput {
-
+    
+    var title: String {
+        return movieOverview.title
+    }
+    
+    func onSync(onSync: @escaping () -> Void) {
+        self.onSync = onSync
+    }
+    
+    func numberOfSections() -> Int {
+        return sections.count
+    }
+    
+    func numberOfRows(at section: Int) -> Int {
+        return sections[section].rows.count
+    }
+    
+    func sectionTitle(at section: Int) -> String? {
+        return sections[section].title
+    }
+    
+    func row(at indexPath: IndexPath) -> MovieDetailsViewModel.RowType {
+        return sections[indexPath.section].rows[indexPath.row]
+    }
 }
 
 // MARK: Private Handlers
 //
 private extension MovieDetailsViewModel {
+    
+    func reloadSectionsAndSync() {
+        reloadSections()
+        onSync()
+    }
+}
 
+// MARK: Reload Sections
+//
+private extension MovieDetailsViewModel {
+
+    func reloadSections() {
+        self.sections = {
+            var sections: [Section] = []
+            
+            sections.append(Section(rows: [.overview]))
+            
+            if similarMoviesList.isNotEmpty {
+                sections.append(Section(title: "Similar Movies", rows: [.similarMovies]))
+            }
+            
+            if actorsList.isNotEmpty {
+                sections.append(Section(title: "Actors", rows: [.actors]))
+            }
+            
+            if directorsList.isNotEmpty {
+                sections.append(Section(title: "Directors", rows: [.directors]))
+            }
+            
+            return sections
+        }()
+    }
+}
+
+// MARK: Nested Types
+//
+extension MovieDetailsViewModel {
+    
+    struct Section {
+        let title: String?
+        let rows: [RowType]
+        
+        init(title: String? = nil, rows: [MovieDetailsViewModel.RowType]) {
+            self.title = title
+            self.rows = rows
+        }
+    }
+    
+    enum RowType {
+        case overview
+        case similarMovies
+        case actors
+        case directors
+        
+        var reuseIdentifier: String {
+            switch self {
+            case .overview:
+                return MovieOverviewTableViewCell.reuseIdentifier
+            case .similarMovies:
+                return MoviesTableViewCell.reuseIdentifier
+            case .actors, .directors:
+                return CastsTableViewCell.reuseIdentifier
+            }
+        }
+    }
 }

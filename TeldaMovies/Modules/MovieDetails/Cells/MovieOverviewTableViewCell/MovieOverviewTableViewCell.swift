@@ -14,10 +14,17 @@ class MovieOverviewTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func configure(_ viewModel: ViewModel) {
+        // TODO:
     }
-    
+}
+
+extension MovieOverviewTableViewCell {
+    struct ViewModel {
+        let title: String
+        
+        init(movie: MovieEntity) {
+            self.title = movie.title ?? ""
+        }
+    }
 }
