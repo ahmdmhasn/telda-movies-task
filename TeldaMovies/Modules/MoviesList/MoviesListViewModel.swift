@@ -11,7 +11,7 @@ import Foundation
 //
 final class MoviesListViewModel {
     let networking = TMDBNetworking()
-    let watchlistStore = MoviesWatchlistStore()
+    let converter = MovieViewModelConverter()
     private var onSync: () -> Void = { }
     private var onShowMovieDetails: (MovieEntity) -> Void = { _ in }
     private var cachedPopularMoviesSections: [Section]?
@@ -110,15 +110,11 @@ private extension MoviesListViewModel {
     }
     
     func parseMoviesListIntoSections(_ movies: [MovieEntity]) -> [Section] {
-        let watchlist = Set(watchlistStore.moviesWatchlist())
         return Dictionary(grouping: movies, by: { $0.releaseYear })
             .map { key, value in
-                let movies = value.map { movie in
-                    let isFavorite = watchlist.contains(movie.id)
-                    let cellViewModel = MovieCellViewModel(movie: movie, isFavorite: isFavorite)
-                    return Row(movie: movie, cellViewModel: cellViewModel)
-                }
-                return Section(title: key ?? "N/A", movies: movies)
+                let movies = converter.movieCellViewModels(of: value)
+                let rows = zip(value, movies).map { Row(movie: $0, cellViewModel: $1) }
+                return Section(title: key ?? "N/A", movies: rows)
             }
             .sorted { $0.title > $1.title }
     }

@@ -46,6 +46,7 @@
 		AADB61F429313EF400C28191 /* NSObject+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB61F329313EF400C28191 /* NSObject+Helpers.swift */; };
 		AADB61F72931438E00C28191 /* CastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB61F52931438E00C28191 /* CastCollectionViewCell.swift */; };
 		AADB61F82931438E00C28191 /* CastCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AADB61F62931438E00C28191 /* CastCollectionViewCell.xib */; };
+		AADB61FA2931513F00C28191 /* MovieViewModelConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB61F92931513F00C28191 /* MovieViewModelConverter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,7 @@
 		AADB61F329313EF400C28191 /* NSObject+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Helpers.swift"; sourceTree = "<group>"; };
 		AADB61F52931438E00C28191 /* CastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastCollectionViewCell.swift; sourceTree = "<group>"; };
 		AADB61F62931438E00C28191 /* CastCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastCollectionViewCell.xib; sourceTree = "<group>"; };
+		AADB61F92931513F00C28191 /* MovieViewModelConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModelConverter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 			children = (
 				AA5E3808292E6C110019D383 /* Logger.swift */,
 				AADB61D6292EFE4900C28191 /* MoviesWatchlistStore.swift */,
+				AADB61F92931513F00C28191 /* MovieViewModelConverter.swift */,
 				AA5E3830292EEDFB0019D383 /* TMDBImageBuilder.swift */,
 			);
 			path = Tools;
@@ -377,6 +380,7 @@
 				AA5E380D292ED0960019D383 /* MovieCreditsEntity.swift in Sources */,
 				AA5E380B292ED0460019D383 /* CastEntity.swift in Sources */,
 				AA5E3821292ED2660019D383 /* MovieDetailsViewModelType.swift in Sources */,
+				AADB61FA2931513F00C28191 /* MovieViewModelConverter.swift in Sources */,
 				AADB61E12931353F00C28191 /* MoviesTableViewCell.swift in Sources */,
 				AA5E3822292ED2660019D383 /* MovieDetailsViewController.swift in Sources */,
 				AA5E382F292EE5600019D383 /* UIImageView+Kingfisher.swift in Sources */,
