@@ -11,6 +11,7 @@ import Foundation
 //
 final class MovieDetailsViewModel {
     let networking = TMDBNetworking()
+    let converter = MovieViewModelConverter()
     let movie: MovieEntity
     private var sections: [Section] = []
     private var onSync: () -> Void = { }
@@ -93,7 +94,7 @@ private extension MovieDetailsViewModel {
                 return
             }
             
-            self.similarMoviesList = value.results.map { MoviesTableViewCell.Element(movie: $0, isFavorite: false) }
+            self.similarMoviesList = self.converter.movieCellViewModels(of: value.results)
             self.reloadSectionsAndSync()
         }
     }
