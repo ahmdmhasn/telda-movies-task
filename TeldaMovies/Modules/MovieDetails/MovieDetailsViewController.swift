@@ -10,6 +10,8 @@ import UIKit
 final class MovieDetailsViewController: UIViewController {
     
     // MARK: Outlets
+    
+    @IBOutlet weak var tableView: UITableView!
 
     // MARK: Properties
         
@@ -30,6 +32,10 @@ final class MovieDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.rowHeight = UITableView.automaticDimension
     }
 }
 
@@ -48,4 +54,23 @@ extension MovieDetailsViewController {
 // MARK: - Private Handlers
 //
 private extension MovieDetailsViewController {
+}
+
+// MARK: - UITableViewDataSource
+//
+extension MovieDetailsViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+}
+
+// MARK: - UITableViewDelegate
+//
+extension MovieDetailsViewController: UITableViewDelegate {
+    
 }

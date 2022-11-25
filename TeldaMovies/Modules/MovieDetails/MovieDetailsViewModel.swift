@@ -18,7 +18,7 @@ final class MovieDetailsViewModel {
 }
 
 // MARK: MovieDetailsViewModel
-
+//
 extension MovieDetailsViewModel: MovieDetailsViewModelInput {
 
 }
