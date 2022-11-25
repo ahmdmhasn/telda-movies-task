@@ -39,6 +39,7 @@ final class MovieDetailsViewController: UIViewController {
         tableView.allowsSelection = false
         tableView.separatorStyle = .none
         tableView.register(MovieOverviewTableViewCell.self)
+        tableView.register(KeyValueTableViewCell.self)
         tableView.register(MoviesTableViewCell.self)
         tableView.register(CastsTableViewCell.self)
         
@@ -102,6 +103,14 @@ private extension MovieDetailsViewController {
         switch cell {
         case let cell as MovieOverviewTableViewCell:
             configureMovieOverview(cell)
+        case let cell as KeyValueTableViewCell where row == .tagline:
+            configureTaglineCell(cell)
+        case let cell as KeyValueTableViewCell where row == .revenue:
+            configureRevenueCell(cell)
+        case let cell as KeyValueTableViewCell where row == .releaseDate:
+            configureReleaseDateCell(cell)
+        case let cell as KeyValueTableViewCell where row == .status:
+            configureStatusCell(cell)
         case let cell as MoviesTableViewCell:
             configureSimilarMovies(cell)
         case let cell as CastsTableViewCell where row == .actors:
@@ -115,6 +124,30 @@ private extension MovieDetailsViewController {
     
     func configureMovieOverview(_ cell: MovieOverviewTableViewCell) {
         cell.configure(viewModel.movieOverview)
+    }
+    
+    func configureTaglineCell(_ cell: KeyValueTableViewCell) {
+        let viewModel = KeyValueTableViewCell.ViewModel(key: "Tagline",
+                                                        value: viewModel.movieOverview.tagline)
+        cell.configure(viewModel)
+    }
+    
+    func configureRevenueCell(_ cell: KeyValueTableViewCell) {
+        let viewModel = KeyValueTableViewCell.ViewModel(key: "Revenue",
+                                                        value: viewModel.movieOverview.revenue)
+        cell.configure(viewModel)
+    }
+    
+    func configureReleaseDateCell(_ cell: KeyValueTableViewCell) {
+        let viewModel = KeyValueTableViewCell.ViewModel(key: "Release Date",
+                                                        value: viewModel.movieOverview.releaseDate)
+        cell.configure(viewModel)
+    }
+    
+    func configureStatusCell(_ cell: KeyValueTableViewCell) {
+        let viewModel = KeyValueTableViewCell.ViewModel(key: "Status",
+                                                        value: viewModel.movieOverview.statues)
+        cell.configure(viewModel)
     }
     
     func configureSimilarMovies(_ cell: MoviesTableViewCell) {

@@ -108,7 +108,7 @@ private extension MovieDetailsViewModel {
         self.sections = {
             var sections: [Section] = []
             
-            sections.append(Section(rows: [.overview]))
+            sections.append(Section(rows: [.overview, .tagline, .revenue, .releaseDate, .status]))
             
             if similarMoviesList.isNotEmpty {
                 sections.append(Section(title: "Similar Movies", rows: [.similarMovies]))
@@ -143,6 +143,10 @@ extension MovieDetailsViewModel {
     
     enum RowType {
         case overview
+        case tagline
+        case revenue
+        case releaseDate
+        case status
         case similarMovies
         case actors
         case directors
@@ -151,6 +155,8 @@ extension MovieDetailsViewModel {
             switch self {
             case .overview:
                 return MovieOverviewTableViewCell.reuseIdentifier
+            case .tagline, .revenue, .releaseDate, .status:
+                return KeyValueTableViewCell.reuseIdentifier
             case .similarMovies:
                 return MoviesTableViewCell.reuseIdentifier
             case .actors, .directors:

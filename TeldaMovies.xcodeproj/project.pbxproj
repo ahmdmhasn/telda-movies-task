@@ -47,6 +47,8 @@
 		AADB61F72931438E00C28191 /* CastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB61F52931438E00C28191 /* CastCollectionViewCell.swift */; };
 		AADB61F82931438E00C28191 /* CastCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AADB61F62931438E00C28191 /* CastCollectionViewCell.xib */; };
 		AADB61FA2931513F00C28191 /* MovieViewModelConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB61F92931513F00C28191 /* MovieViewModelConverter.swift */; };
+		AADB61FE2931526100C28191 /* KeyValueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB61FC2931526100C28191 /* KeyValueTableViewCell.swift */; };
+		AADB61FF2931526100C28191 /* KeyValueTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AADB61FD2931526100C28191 /* KeyValueTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +93,8 @@
 		AADB61F52931438E00C28191 /* CastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastCollectionViewCell.swift; sourceTree = "<group>"; };
 		AADB61F62931438E00C28191 /* CastCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastCollectionViewCell.xib; sourceTree = "<group>"; };
 		AADB61F92931513F00C28191 /* MovieViewModelConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModelConverter.swift; sourceTree = "<group>"; };
+		AADB61FC2931526100C28191 /* KeyValueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueTableViewCell.swift; sourceTree = "<group>"; };
+		AADB61FD2931526100C28191 /* KeyValueTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyValueTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				AADB61E72931355900C28191 /* CastsTableViewCell */,
+				AADB62002931526700C28191 /* KeyValueTableViewCell */,
 				AADB61E92931356700C28191 /* MovieOverviewTableViewCell */,
 				AADB61E82931355F00C28191 /* MoviesTableViewCell */,
 			);
@@ -294,6 +299,15 @@
 				AA5E3825292ED7BC0019D383 /* MovieCollectionViewCell */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		AADB62002931526700C28191 /* KeyValueTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				AADB61FC2931526100C28191 /* KeyValueTableViewCell.swift */,
+				AADB61FD2931526100C28191 /* KeyValueTableViewCell.xib */,
+			);
+			path = KeyValueTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,6 +377,7 @@
 				AADB61DC2931351400C28191 /* MovieOverviewTableViewCell.xib in Resources */,
 				AA5E3829292ED7D50019D383 /* MovieCollectionViewCell.xib in Resources */,
 				AA5E37F1292DF3600019D383 /* LaunchScreen.storyboard in Resources */,
+				AADB61FF2931526100C28191 /* KeyValueTableViewCell.xib in Resources */,
 				AADB61E62931355000C28191 /* CastsTableViewCell.xib in Resources */,
 				AA5E37EE292DF3600019D383 /* Assets.xcassets in Resources */,
 				AADB61F82931438E00C28191 /* CastCollectionViewCell.xib in Resources */,
@@ -407,6 +422,7 @@
 				AADB61D7292EFE4900C28191 /* MoviesWatchlistStore.swift in Sources */,
 				AA5E37E5292DF35F0019D383 /* AppDelegate.swift in Sources */,
 				AADB61EF293136B500C28191 /* UICollectionView+Helpers.swift in Sources */,
+				AADB61FE2931526100C28191 /* KeyValueTableViewCell.swift in Sources */,
 				AA5E3819292ED21D0019D383 /* MoviesListViewController.swift in Sources */,
 				AA5E3828292ED7D50019D383 /* MovieCollectionViewCell.swift in Sources */,
 			);
